@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
 
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
@@ -9,10 +9,10 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import r2_score
 
-tokenizer = nltk.tokenize.RegexpTokenizer(r'\w+')
+analyzer = SentimentIntensityAnalyzer()
 poly = PolynomialFeatures(degree=6)
 
-data_reg = pd.read_csv('check\\reviews_analyzed.csv', header=0, usecols=['review', 'semantic', 'score'])
+data_reg = pd.read_csv('datasets\\reviews_analyzed.csv', header=0, usecols=['review', 'semantic', 'score'])
 
 X = np.array(data_reg['semantic']).reshape(data_reg.shape[0], 1)
 y = np.array(data_reg['score']).reshape(data_reg.shape[0], 1)
@@ -41,4 +41,13 @@ comparison_df = pd.DataFrame(
 
 print(metrics_df)
 
-comparison_df.to_csv('check\\comparison.csv')
+metrics_df.to_csv('evaluation\\metrics.csv')
+comparison_df.to_csv('evaluation\\comparison.csv')
+
+
+def review_predict(review):
+    score = np.array(analyzer.polarity_scores(review)['compound']).reshape(1, 1)
+    print(f"review: {review}")
+    print(f"Compound value from semantic analysis: {np.sum(score)}")
+    score = poly.fit_transform(score)
+    print(f"Predicted metascore for that review: {np.round(regression.predict(score))}")

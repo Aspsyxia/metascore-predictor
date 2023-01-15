@@ -10,7 +10,35 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\check\reviews_analyzed.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\datasets\reviews_analyzed.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\datasets\reviews_dataset.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\days_gone_reviews.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\gravity_rush_2_reviews.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -32,6 +60,20 @@
           </value>
         </entry>
         <entry key="\metal_gear_solid_5_phantom_pain_reviews.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\reviews\death_stranding_reviews.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\reviews_dataset.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
