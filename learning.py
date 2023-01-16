@@ -9,10 +9,11 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import r2_score
 
+
 analyzer = SentimentIntensityAnalyzer()
 poly = PolynomialFeatures(degree=6)
 
-data_reg = pd.read_csv('datasets\\reviews_analyzed.csv', header=0, usecols=['review', 'semantic', 'score'])
+data_reg = pd.read_csv('datasets\\reviews_processed.csv', header=0, usecols=['review', 'semantic', 'score'])
 
 X = np.array(data_reg['semantic']).reshape(data_reg.shape[0], 1)
 y = np.array(data_reg['score']).reshape(data_reg.shape[0], 1)
